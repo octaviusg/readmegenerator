@@ -68,5 +68,102 @@ const questions = [
     },
 
 ];
+function init() {
+    inquirer.prompt(questions).then((response)=>{
+    
+   
+    fs.appendFileSync("README.md", ("# " + response.repoName )+ '\n', function(err) { 
+    
+        if (err) { 
+        console.log(err)
+        }
+        else {
+        console.log("Success")
+        }
+    
+    })
+    
+    fs.appendFileSync("README.md", ("This application was developed by: " + response.gitHubName + '\n') + '\n', function(err) { 
+    
+        if (err) { 
+        console.log(err)
+        }
+        else {
+        console.log("Success")
+        }
+    
+    })
+    
+    fs.appendFileSync("README.md",  ( response.description ) + '\n', function(err) { 
+    
+        if (err) { 
+        console.log(err)
+        }
+        else {
+        console.log("Success")
+        }
+    
+    })
+     
+    fs.appendFileSync("README.md", ("## Installation" + '\n' + response.installApp )+ '\n', function(err) { 
+    
+        if (err) { 
+        console.log(err)
+        }
+        else {
+        console.log("Success")
+        }
+    
+    })
 
+    fs.appendFileSync("README.md", ("## How to use the Application" + '\n' + response.appInstructions)+ '\n', function(err) { 
+    
+        if (err) { 
+        console.log(err)
+        }
+        else {
+        console.log("Success")
+        }
+    
+    })
+    
+    fs.appendFileSync("README.md", ("## Issue Reporting and Contributing" + '\n' + response.appIssuesAndCont)+ '\n', function(err) { 
+    
+        if (err) { 
+        console.log(err)
+        }
+        else {
+        console.log("Success")
+        }
+    
+    })
+ 
+    fs.appendFileSync("README.md", ("## Other Contibuting Developers:" + '\n' + response.contributors)+ '\n', function(err) { 
+    
+        if (err) { 
+        console.log(err)
+        }
+        else {
+        console.log("Success")
+        }
+    
+    })
+  
+    fs.appendFileSync("README.md", ("## Licence" + '\n' + response.License)+ '\n', function(err) { 
+    
+        if (err) { 
+        console.log(err)
+        }
+        else {
+        console.log("Success")
+        }
+    
+    })
+    
+    })
+    }
+    
+    
+    init();
+    
 
